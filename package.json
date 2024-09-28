@@ -18,12 +18,14 @@
     "js-base64": "^3.7.7",
     "lucide-react": "^0.445.0",
     "next": "14.2.13",
+    "openai": "^4.63.0",
     "react": "^18",
     "react-dom": "^18",
     "react-markdown": "^9.0.1",
+    "recharts": "^2.12.7",
     "tailwind-merge": "^2.5.2",
     "tailwindcss-animate": "^1.0.7",
-    "use-github-react": "^1.2.1"
+    "use-github-react": "^1.2.3-dev"
   },
   "devDependencies": {
     "eslint": "^8",

@@ -6,7 +6,7 @@ const UserProfile = ({ username }) => {
   useEffect(()=>{
     console.log("username: ", username);
   }, [])
-  const { userInfo } = useGitHub({ username });
+  const { userInfo } = useGitHub({ username, personalAccessToken: process.env.GITHUB_ACCESS_TOKEN  });
 
   if (!userInfo) return <p>Loading...</p>;  
 

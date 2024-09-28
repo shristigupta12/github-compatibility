@@ -1,10 +1,13 @@
-  "use client"
+"use client"
 import { Button } from "@/components/ui/button";
   import { Input } from "@/components/ui/input";
 import UserFollowList from "@/components/ui/userFollowList";
-import { LanguageDistribution } from "@/components/ui/userLanguageDistribution";
+// import { LanguageDistribution } from "@/components/ui/userLanguageDistribution";
+import LanguageDistribution from "@/components/ui/userLanguageDistribution";
+import CompatibilityReport from "@/components/ui/compatibilityReport";
   import UserProfile from "@/components/ui/userProfile";
   import UserReadme from "@/components/ui/userReadme";
+import UserRepositories from "@/components/ui/userRepositories";
   import { useEffect, useState } from "react";
 
   export default function Home() {
@@ -16,19 +19,6 @@ import { LanguageDistribution } from "@/components/ui/userLanguageDistribution";
     const handleInputNameChange = (event) => {
       setInputName(event.target.value)
     }
-
-
-
-    // useEffect(()=>{
-    //   console.log("userName: ", userName)
-    // },[userName])
-
-    // const handleKeyDown = (event) => {
-    //   if(event.key === "Enter"){
-    //     event.preventDefault();
-    //     setUserName(inputName)
-    //   }
-    // }
 
     return (
       <div className="flex flex-col w-[100vw] py-20 justify-center items-center gap-8">
@@ -59,6 +49,18 @@ import { LanguageDistribution } from "@/components/ui/userLanguageDistribution";
               onClick={()=>setActiveData("readme file")}>
                 Readme File
             </Button>
+            <Button variant={
+              activeData=="repositories"? "default" : "outline"} 
+              className={`${activeData=="repositories"?"text-neutral-50":"text-neutral-500"}`} 
+              onClick={()=>setActiveData("repositories")}>
+                Repositories
+            </Button>
+            <Button variant={
+              activeData=="compatibility report"? "default" : "outline"} 
+              className={`${activeData=="compatibility report"?"text-neutral-50":"text-neutral-500"}`} 
+              onClick={()=>setActiveData("compatibility report")}>
+                Compatibility Report
+            </Button>
           </div>
 
           {!activeData && <div></div>}
@@ -67,6 +69,8 @@ import { LanguageDistribution } from "@/components/ui/userLanguageDistribution";
           {activeData=="follow list" && <UserFollowList username={inputName} /> }
           {activeData=="language distribution" &&  <LanguageDistribution username={inputName} /> }
           {activeData=="readme file" &&  <UserReadme username={inputName} /> }
+          {activeData=="repositories" &&  <UserRepositories username={inputName} /> }
+          {activeData=="compatibility report" &&  <CompatibilityReport username={inputName} /> }
       </div>
     );
   } 

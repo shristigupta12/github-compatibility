@@ -1,8 +1,9 @@
 "use client"
+
 import React from 'react';
 import { useGitHub } from 'use-github-react/dist/use-github';
 
-export const LanguageDistribution = ({ username }) => {
+export default function LanguageDistribution ({ username })  {
   const { getRepositories } = useGitHub({ username });
   const languageDist = getRepositories().all.languageDistribution();
 
@@ -19,3 +20,4 @@ export const LanguageDistribution = ({ username }) => {
     </div>
   );
 };
+
