@@ -30,7 +30,7 @@ export default function UserReadme({username}) {
     }, [username])
 
   return (
-    <div className="flex flex-col w-[100vw] min-h-[100vh] justify-start items-center gap-5">
+    <div className="flex flex-col  justify-start items-center gap-5">
       
       {loading && <p>Loading...</p>}
       {error && <p className="text-red-500">{error}</p>}
@@ -48,7 +48,7 @@ export default function UserReadme({username}) {
           {userData.profileReadme && (
             <div className="mb-6">
               <h3 className="text-xl font-semibold mb-2">Profile README</h3>
-              <div className="bg-gray-100 p-4 rounded-md">
+              <div className="bg-neutral-50 p-4 rounded-md">
                 <ReactMarkdown>{userData.profileReadme}</ReactMarkdown>
               </div>
             </div>
