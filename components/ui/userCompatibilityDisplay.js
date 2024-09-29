@@ -105,11 +105,11 @@ const UserCompatibilityDisplay = ({ user1, user2 }) => {
   const { user1: userData1, user2: userData2, compatibility } = data;
 
   return (
-    <div className="p-4 max-w-7xl mx-auto">
+    <div className="md:p-4 max-w-7xl mx-auto">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <Card className="mb-6 col-span-full">
           <CardHeader>
-            <h2 className="text-2xl font-semibold">User Details</h2>
+            <h2 className="md:text-2xl text-xl font-semibold">User Details</h2>
           </CardHeader>
           <CardContent>
             <div className="flex flex-col md:flex-row justify-between items-start space-y-8 md:space-y-0 md:space-x-8">
@@ -121,17 +121,17 @@ const UserCompatibilityDisplay = ({ user1, user2 }) => {
 
         <Card className="mb-6 col-span-full pb-7">
           <CardHeader >
-            <h3 className="text-2xl font-semibold">Compatibility Score</h3>
+            <h3 className="md:text-2xl text-xl font-semibold">Compatibility Score</h3>
           </CardHeader>
-          <CardContent className="flex items-center">
+          <CardContent className="flex md:flex-row flex-col items-center">
             <SemiCircularPercentage percentage={compatibility.compatibilityPercentage} className="w-full" />
-            <p className=" w-full text-justify text-lg">{compatibility.explanation}</p>
+            <p className=" w-full text-justify md:text-lg max-md:mt-10">{compatibility.explanation}</p>
           </CardContent>
         </Card>
 
         <Card className="mb-6">
           <CardHeader>
-            <h3 className="text-2xl font-semibold">Shared Skills</h3>
+            <h3 className="md:text-2xl text-xl font-semibold">Shared Skills</h3>
           </CardHeader>
           <CardContent>
             <div className="flex flex-wrap gap-2 justify-center">
@@ -144,10 +144,10 @@ const UserCompatibilityDisplay = ({ user1, user2 }) => {
 
         <Card className="mb-6 ">
           <CardHeader>
-            <h3 className="text-2xl font-semibold">Project Ideas</h3>
+            <h3 className="md:text-2xl text-xl font-semibold">Project Ideas</h3>
           </CardHeader>
           <CardContent>
-            <ul className="list-disc list-inside text-lg">
+            <ul className="list-disc list-inside md:text-lg text-justify">
               {compatibility.projectIdeas.map((idea, index) => (
                 <li key={index}>{idea}</li>
               ))}
@@ -163,13 +163,13 @@ const UserCard = ({ user }) => {
   const [showReadme, setShowReadme] = useState(false);
 
   return (
-    <div className="text-center w-full">
-      <Avatar className="w-32 h-32 mx-auto mb-2">
+    <div className="text-center w-full  ">
+      <Avatar className="md:w-32 md:h-32 w-20 h-20 mx-auto mb-2">
         <AvatarImage src={user.avatar_url} alt={user.login} />
         <AvatarFallback>{user.login[0].toUpperCase()}</AvatarFallback>
       </Avatar>
-      <h3 className="font-semibold text-xl">{user.login}</h3>
-      <p className="text-lg">{user.bio}</p>
+      <h3 className="font-semibold md:text-xl text-lg">{user.login}</h3>
+      <p className="md:text-lg">{user.bio}</p>
       <div className="mt-2">
         {user.languages.map(([lang, count], index) => (
           <Badge key={index} variant="secondary" className="m-1 text-base">
@@ -177,7 +177,7 @@ const UserCard = ({ user }) => {
           </Badge>
         ))}
       </div>
-      <Button onClick={() => setShowReadme(!showReadme)} size="sm" className="mt-4">
+      <Button onClick={() => setShowReadme(!showReadme)} size="sm" className="mt-4 text-sm">
         {showReadme ? "Hide" : "Show"} {user.login}'s README
       </Button>
       {showReadme && (
