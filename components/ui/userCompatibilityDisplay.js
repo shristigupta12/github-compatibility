@@ -135,7 +135,7 @@ const UserCompatibilityDisplay = ({ user1, user2 }) => {
                     {showReadme1 ? "Hide" : "Show"} {userData1.login}&#39;s README
                   </Button>
                   {showReadme1 && (
-                    <Card className="mt-4">
+                    <Card className="mt-4 md:hidden w-full">
                       <CardContent>
                         <UserReadme username={userData1.login} />
                       </CardContent>
@@ -161,7 +161,7 @@ const UserCompatibilityDisplay = ({ user1, user2 }) => {
                     {showReadme2 ? "Hide" : "Show"} {userData2.login}&#39;s README
                   </Button>
                   {showReadme2 && (
-                    <Card className="mt-4">
+                    <Card className="mt-4 md:hidden w-full">
                       <CardContent>
                         <UserReadme username={userData2.login} />
                       </CardContent>
@@ -198,14 +198,14 @@ const UserCompatibilityDisplay = ({ user1, user2 }) => {
               </div>
               <div className='md:flex hidden justify-between w-full'>
                 {showReadme1 && (
-                  <Card className="mt-4">
+                  <Card className="mt-4 w-full">
                     <CardContent>
                       <UserReadme username={userData1.login} />
                     </CardContent>
                   </Card>
                 )}
                 {showReadme2 && (
-                  <Card className="mt-4">
+                  <Card className="mt-4 w-full">
                     <CardContent>
                       <UserReadme username={userData2.login} />
                     </CardContent>
