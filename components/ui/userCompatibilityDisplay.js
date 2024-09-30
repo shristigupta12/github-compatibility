@@ -178,12 +178,12 @@ const UserCard = ({ user }) => {
         ))}
       </div>
       <Button onClick={() => setShowReadme(!showReadme)} size="sm" className="mt-4 text-sm">
-        {showReadme ? "Hide" : "Show"} {user.login}'s README
+        {showReadme ? "Hide" : "Show"} {user.login}&#39;s README
       </Button>
       {showReadme && (
         <Card className="mt-4">
           <CardHeader>
-            <h3 className="text-xl font-semibold">{user.login}'s README</h3>
+            <h3 className="text-xl font-semibold">{user.login}&#39;s README</h3>
           </CardHeader>
           <CardContent>
             <UserReadme username={user.login} />
