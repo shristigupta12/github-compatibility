@@ -10,7 +10,7 @@
 //   while (true) {
 //     const response = await fetch(`${url}?per_page=${perPage}&page=${page}`, {
 //       headers: {
-//         Authorization: `token ${process.env.GITHUB_ACCESS_TOKEN}`,
+//         Authorization: `token ${process.env.NEXT_PUBLIC_GITHUB_ACCESS_TOKEN}`,
 //       },
 //     });
 //     const data = await response.json();
@@ -31,7 +31,7 @@
 //     const readmeUrl = `https://api.github.com/repos/${username}/${username}/contents/README.md`;
 //     const response = await fetch(readmeUrl, {
 //       headers: {
-//         Authorization: `token ${process.env.GITHUB_ACCESS_TOKEN}`,
+//         Authorization: `token ${process.env.NEXT_PUBLIC_GITHUB_ACCESS_TOKEN}`,
 //       },
 //     });
     
@@ -61,7 +61,7 @@
 //     const [userRes, followers, following, profileReadme] = await Promise.all([
 //       fetch(`https://api.github.com/users/${username}`, {
 //         headers: {
-//           Authorization: `token ${process.env.GITHUB_ACCESS_TOKEN}`,
+//           Authorization: `token ${process.env.NEXT_PUBLIC_GITHUB_ACCESS_TOKEN}`,
 //         },
 //       }),
 //       fetchAllPages(`https://api.github.com/users/${username}/followers`),
@@ -101,7 +101,7 @@ async function fetchAllPages(url) {
   while (true) {
     const response = await fetch(`${url}?per_page=${perPage}&page=${page}`, {
       headers: {
-        Authorization: `token ${process.env.GITHUB_ACCESS_TOKEN}`,
+        Authorization: `token ${process.env.NEXT_PUBLIC_GITHUB_ACCESS_TOKEN}`,
       },
     });
     const data = await response.json();
@@ -122,7 +122,7 @@ async function fetchProfileReadme(username) {
     const readmeUrl = `https://api.github.com/repos/${username}/${username}/contents/README.md`;
     const response = await fetch(readmeUrl, {
       headers: {
-        Authorization: `token ${process.env.GITHUB_ACCESS_TOKEN}`,
+        Authorization: `token ${process.env.NEXT_PUBLIC_GITHUB_ACCESS_TOKEN}`,
       },
     });
     
@@ -158,7 +158,7 @@ export default async function handler(req, res) {
     const [userRes, followers, following, profileReadme] = await Promise.all([
       fetch(`https://api.github.com/users/${username}`, {
         headers: {
-          Authorization: `token ${process.env.GITHUB_ACCESS_TOKEN}`,
+          Authorization: `token ${process.env.NEXT_PUBLIC_GITHUB_ACCESS_TOKEN}`,
         },
       }),
       fetchAllPages(`https://api.github.com/users/${username}/followers`),
