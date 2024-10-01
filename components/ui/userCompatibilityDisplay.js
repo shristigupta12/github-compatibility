@@ -244,7 +244,7 @@ const UserCompatibilityDisplay = ({ user1, user2 }) => {
             <h3 className="md:text-xl text-lg font-semibold">Project Ideas</h3>
           </CardHeader>
           <CardContent>
-            <ul className="list-disc list-inside md:text-lg text-justify">
+            <ul className="list-disc list-inside md:text-lg text-justify max-md:pb-4">
               {compatibility.projectIdeas.map((idea, index) => (
                 <li key={index}>{idea}</li>
               ))}

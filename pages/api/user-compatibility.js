@@ -1,8 +1,8 @@
 // import { Octokit } from "@octokit/rest";
 // import { Configuration, OpenAIApi } from "openai";
 
-// const octokit = new Octokit({ auth: process.env.NEXT_PUBLIC_GITHUB_ACCESS_TOKEN });
-// const openai = new OpenAIApi(new Configuration({ apiKey: process.env.NEXT_PUBLIC_OPENAI_API_KEY }));
+// const octokit = new Octokit({ auth: process.env.GITHUB_ACCESS_TOKEN });
+// const openai = new OpenAIApi(new Configuration({ apiKey: process.env.OPENAI_API_KEY }));
 
 // async function fetchUserDetails(username) {
 //   try {
@@ -102,8 +102,8 @@
 import { Octokit } from "@octokit/rest";
 import { Configuration, OpenAIApi } from "openai";
 
-const octokit = new Octokit({ auth: process.env.NEXT_PUBLIC_GITHUB_ACCESS_TOKEN });
-const openai = new OpenAIApi(new Configuration({ apiKey: process.env.NEXT_PUBLIC_OPENAI_API_KEY }));
+const octokit = new Octokit({ auth: process.env.GITHUB_ACCESS_TOKEN });
+const openai = new OpenAIApi(new Configuration({ apiKey: process.env.OPENAI_API_KEY }));
 
 async function fetchUserDetails(username) {
   try {
