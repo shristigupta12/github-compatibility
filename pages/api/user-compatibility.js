@@ -65,7 +65,7 @@ async function analyzeCompatibility(user1, user2) {
     1. A compatibility percentage (0-100)
     2. A brief explanation of their compatibility
     3. A list of shared skills or interests
-    4. Potential project ideas they could work on together
+    4. Potential project ideas they could work on together (Example: Clone of discord, socket based chat application)
 
     Respond ONLY with a JSON object:
     {
